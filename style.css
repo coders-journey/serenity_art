@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #180341 url('./img/hapiwasabi.png') no-repeat center center/cover;
+  color: #fff;
+  /* font-family: 'Montserrat', sans-serif; */
+  /* font-family: 'Gruppo', cursive; */
+  font-family: 'Cantarell', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1px;
+  align-items: center;
+  margin-left: 45%;
+}
+
+.main-title {
+  margin-top: 65px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: #333;
+}
+
+.sub-title {
+  font-size: 20px;
+  color: rgb(26, 21, 21);
+}
+
+.katakana {
+  font-size: 15px; 
+  line-height:1px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 90px auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+}
+
+.circle {
+  background-color: #010f1c;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle {
+  background: conic-gradient(
+    #72863b 0%,
+    #72863b 33.3%,
+    rgb(219, 195, 179) 33.3%,
+    rgb(219, 195, 179) 66.6%,
+    #b47f1c 66.6%,
+    #b47f1c 100%
+  );
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  animation: rotate 12s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container.grow {
+  animation: grow 4s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.container.shrink {
+  animation: shrink 4s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@media(max-width: 500px) {
+  /* h1 {
+    padding: 20px 30px 0;
+    font-size: 20px;
+  } */
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1px;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 90px auto;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    transform: scale(1);
+  }
+  
+  .gradient-circle {
+    background: conic-gradient(
+    #72863b 0%,
+    #72863b 33.3%,
+    rgb(219, 195, 179) 33.3%,
+    rgb(219, 195, 179) 66.6%,
+    #b47f1c 66.6%,
+    #b47f1c 100%
+  );
+    height: 220px;
+    width: 220px;
+    z-index: -2;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+
+  .pointer-container {
+    position: absolute;
+    top: -40px;
+    left: 90px;
+    width: 20px;
+    height: 140px;
+    animation: rotate 12s linear forwards infinite;
+    transform-origin: bottom center;
+}
